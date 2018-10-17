@@ -1,5 +1,11 @@
+# URL 정책 설정
+# 주소창에 index.php?controller=about 과 같이 복잡하게 할 필요 없이
+# 127.0.0.1/about 과 같이 간단하게 할 수 있다.
 Options -MultiViews
 RewriteEngine On
+# 디렉토리의 파일 목록을 보는 것을 방지함
+# 이 값이 +Indexes로 되어 있다면 아파치 서버가 디렉토리에 접근했을 때
+# 기본적으로 찾아 실행할 파일이 없을 경우 해당 디렉토리의 폴더를 보여주게 되어 있다.
 Options -Indexes
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
